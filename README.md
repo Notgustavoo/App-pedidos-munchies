@@ -57,5 +57,13 @@ npm start
 
 ---
 
+## Screenshots de muestra
+
+** <img width="739" height="1600" alt="image" src="https://github.com/user-attachments/assets/6a6ae440-ee59-4c14-9b0f-cdda901a405f" />
+** <img width="739" height="1600" alt="image" src="https://github.com/user-attachments/assets/45e7cf47-7783-4be8-bd7c-470092c270fc" />
+** <img width="739" height="1600" alt="image" src="https://github.com/user-attachments/assets/c8242721-268c-4b1b-ad78-32a575f7b6ca" />
+** <img width="1526" height="674" alt="image" src="https://github.com/user-attachments/assets/b2b6891b-4a4b-4a4f-85eb-430dece40e06" />
+
+
 **Desarrollado por**: Notgustavoo alias gosha 
 **Fecha**: Agosto 2025
