@@ -18,6 +18,49 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
+# Firebase (no subir configuración real)
+config/firebase.js
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# iOS
+ios/
+*.ipa
+
+# Android
+android/
+*.apk
+*.aab
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # Metro
 .metro-health-check*
 
