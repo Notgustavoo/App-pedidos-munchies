@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import ProductsScreen from '../screens/ProductsScreen';
 import CartScreen from '../screens/CartScreen';
 import OrdersScreen from '../screens/OrdersScreen';
+import AdminScreen from '../screens/AdminScreen';
 
 // Importar contexto del carrito
 import { useCart } from '../context/CartContext';
@@ -26,6 +27,8 @@ const getTabBarIcon = (route, focused, color, size) => {
     iconName = focused ? 'cart' : 'cart-outline';
   } else if (route.name === 'Orders') {
     iconName = focused ? 'receipt' : 'receipt-outline';
+  } else if (route.name === 'Admin') {
+    iconName = focused ? 'settings' : 'settings-outline';
   }
 
   return <Ionicons name={iconName} size={size} color={color} />;
@@ -90,6 +93,14 @@ const OrdersStack = () => {
   );
 };
 
+const AdminStack = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="AdminPanel" component={AdminScreen} />
+    </Stack.Navigator>
+  );
+};
+
 // Tab Navigator principal
 const TabNavigator = () => {
   return (
@@ -137,6 +148,13 @@ const TabNavigator = () => {
         component={OrdersStack}
         options={{
           tabBarLabel: 'Pedidos',
+        }}
+      />
+      <Tab.Screen
+        name="Admin"
+        component={AdminStack}
+        options={{
+          tabBarLabel: 'Admin',
         }}
       />
     </Tab.Navigator>
