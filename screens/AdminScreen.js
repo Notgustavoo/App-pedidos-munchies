@@ -9,7 +9,7 @@ import {
   Modal,
   TextInput,
   ScrollView,
-  ActivityIndicator
+  ActivityIndicator,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { productService } from '../services/firestore';
@@ -23,7 +23,7 @@ const AdminScreen = () => {
     nombre: '',
     descripcion: '',
     precio: '',
-    stock: ''
+    stock: '',
   });
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const AdminScreen = () => {
       nombre: '',
       descripcion: '',
       precio: '',
-      stock: ''
+      stock: '',
     });
     setModalVisible(true);
   };
@@ -60,7 +60,7 @@ const AdminScreen = () => {
       nombre: product.nombre,
       descripcion: product.descripcion,
       precio: product.precio.toString(),
-      stock: product.stock.toString()
+      stock: product.stock.toString(),
     });
     setModalVisible(true);
   };
@@ -71,7 +71,7 @@ const AdminScreen = () => {
       Alert.alert('Error', 'El nombre es obligatorio');
       return;
     }
-    
+
     if (!formData.descripcion.trim()) {
       Alert.alert('Error', 'La descripción es obligatoria');
       return;
@@ -95,7 +95,7 @@ const AdminScreen = () => {
         nombre: formData.nombre.trim(),
         descripcion: formData.descripcion.trim(),
         precio: precio,
-        stock: stock
+        stock: stock,
       };
 
       if (editingProduct) {
@@ -134,8 +134,8 @@ const AdminScreen = () => {
               Alert.alert('Error', 'No se pudo eliminar el producto');
               console.error('Error eliminando producto:', error);
             }
-          }
-        }
+          },
+        },
       ]
     );
   };
@@ -155,7 +155,7 @@ const AdminScreen = () => {
           </View>
         </View>
       </View>
-      
+
       <View style={styles.productActions}>
         <TouchableOpacity
           style={styles.editButton}
@@ -163,7 +163,7 @@ const AdminScreen = () => {
         >
           <Ionicons name="pencil" size={18} color="white" />
         </TouchableOpacity>
-        
+
         <TouchableOpacity
           style={styles.deleteButton}
           onPress={() => handleDeleteProduct(item)}
@@ -187,10 +187,7 @@ const AdminScreen = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Panel de Administrador</Text>
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={openAddModal}
-        >
+        <TouchableOpacity style={styles.addButton} onPress={openAddModal}>
           <Ionicons name="add" size={24} color="white" />
         </TouchableOpacity>
       </View>
@@ -233,7 +230,9 @@ const AdminScreen = () => {
                   <TextInput
                     style={styles.textInput}
                     value={formData.nombre}
-                    onChangeText={(text) => setFormData({...formData, nombre: text})}
+                    onChangeText={(text) =>
+                      setFormData({ ...formData, nombre: text })
+                    }
                     placeholder="Ej: Pizza Margherita"
                     placeholderTextColor="#999"
                   />
@@ -244,7 +243,9 @@ const AdminScreen = () => {
                   <TextInput
                     style={[styles.textInput, styles.textArea]}
                     value={formData.descripcion}
-                    onChangeText={(text) => setFormData({...formData, descripcion: text})}
+                    onChangeText={(text) =>
+                      setFormData({ ...formData, descripcion: text })
+                    }
                     placeholder="Descripción del producto..."
                     placeholderTextColor="#999"
                     multiline
@@ -258,7 +259,9 @@ const AdminScreen = () => {
                     <TextInput
                       style={styles.textInput}
                       value={formData.precio}
-                      onChangeText={(text) => setFormData({...formData, precio: text})}
+                      onChangeText={(text) =>
+                        setFormData({ ...formData, precio: text })
+                      }
                       placeholder="0.00"
                       placeholderTextColor="#999"
                       keyboardType="numeric"
@@ -270,7 +273,9 @@ const AdminScreen = () => {
                     <TextInput
                       style={styles.textInput}
                       value={formData.stock}
-                      onChangeText={(text) => setFormData({...formData, stock: text})}
+                      onChangeText={(text) =>
+                        setFormData({ ...formData, stock: text })
+                      }
                       placeholder="0"
                       placeholderTextColor="#999"
                       keyboardType="numeric"
